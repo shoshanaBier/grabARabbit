@@ -1,0 +1,656 @@
+﻿* {
+    font-family: 'Amatic SC', cursive;
+}
+/* מבטל את הגלגלת שבצד*/
+::-webkit-scrollbar {
+    width: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background: #ffc60080;
+    background-repeat: no-repeat;
+    background-image: url('../pics/views/vi4.png');
+    background-size: cover;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5vw;
+    line-height: 1;
+    margin: 45px 0 0 36vw;
+}
+
+
+.score, #time, #lev {
+    background: rgba(255,255,255,0.2);
+    padding: 0 3rem;
+    line-height: 1;
+    border-radius: 1rem;
+    margin: 6px;
+    text-align: center;
+    font-size: 8rem;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.points > p {
+    font-size: 30px;
+    margin: 0 5px 7px 0;
+}
+
+
+.game {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.hole {
+    flex: 1 0 20%;
+    overflow: hidden;
+    position: relative;
+    min-width: 174px;
+}
+
+    .hole:after {
+        display: block;
+        background-image: url('../pics/rocks/ro1.gif');
+        background-size: contain;
+        content: '';
+        width: 100%;
+        height: 120px;
+        position: absolute;
+        z-index: 2;
+        bottom: 0px;
+    }
+
+.mole {
+    background: border-box;
+    background-size: contain;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 94%;
+    transition: all 0.4s;
+}
+
+.hole.up .mole {
+    top: 0;
+}
+
+
+/*הודעת סיום*/
+
+
+/*
+    .newClass {
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0, 0, 0, 0.7);
+    transition:opacity 500ms;
+    visibility:collapse;
+    opacity: 0;
+}
+*/
+
+    .newClass:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    width: 75%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+    .popup h2 {
+        margin-top: 0;
+        color: #333;
+    }
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 93%;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+    .close:hover {
+        color: #E5F720;
+    }
+
+.popup .content-1,
+.content-2 {
+    max-height: 30%;
+    overflow: auto;
+    text-align: center;
+}
+
+.show {
+    visibility: visible !important;
+    opacity: 100 !important;
+}
+
+#starRating li {
+    display: inline-block;
+}
+
+#play-again, #next-level {
+    background-color: #141214;
+    padding: 0.7rem 1rem;
+    font-size: 2rem;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+
+/* אפקט אוברלי*/
+/* קטע קוד זה הועתק מהאתר W3SCHOOL*/
+/* עיצוב האפקט*/
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+/*  עיצוב הטקסט שבתוך העיצוב*/
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+
+
+
+/*  login*/
+/* קטע קוד זה הועתק מהאתר W3SCHOOL*/
+
+
+.ok {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 0 0 0;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    float: right;
+    font-size: 15px;
+}
+
+/* Set a style for all buttons */
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+/*  הכפתור בזמן מעבר*/
+button:hover, .ok:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: 28%;
+    background-color: #f44336;
+    padding: 14px 20px;
+    margin: 20px 2% 0 0;
+    font-size: 15px;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+/* התמונה שבתוך המסגרת שנפתחת*/
+img.avatar {
+    width: 30%;
+    border-radius: 50%;
+}
+/* התוכן שבתוך*/
+.container {
+    padding: 0 16px;
+    margin-bottom: 50px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+    font-size: 28px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    margin: 1% auto 2% auto; /* 5% from the top, 15% from the bottom and centered */
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    /*right: 25px;*/
+    top: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+}
+
+    .close:hover,
+    .close:focus {
+        color: salmon;
+        cursor: pointer;
+    }
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+/*כפתור צלילים*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bbb6b6d1;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: salmon;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #141214;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+* {
+    outline: none;
+}
+
+
+
+.def {
+    width: 20px;
+}
+
+.grid-container1 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    width: 50%;
+    height: 32vh;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+    width: 70%;
+    height: 32vh;
+}
+
+.witchPic {
+    border: solid 1px;
+    border-radius: 21px;
+    width: 70px;
+}
+
+.viewPic {
+    border: solid 1px;
+    border-radius: 21px;
+    width: 140px;
+}
+
+aside > img:hover {
+    opacity: 0.4;
+}
+
+.selected {
+    border: solid 3.5px salmon;
+}
+
+/*טוליפ*/
+.tooltip {
+    display: block;
+    margin: auto;
+    position: relative;
+}
+
+.tooltiptext {
+    font-size: 30px;
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+    .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+.v {
+    visibility: visible;
+    opacity: 1;
+}
+
+.time p {
+    font-size: 30px;
+    display: inline;
+}
+
+.points {
+    display: inline-block;
+}
+/*גריד ראשי*/
+.item1 {
+    grid-area: header;
+    position: fixed;
+}
+
+.item2 {
+    grid-area: menu;
+    cursor: pointer;
+}
+
+.item3 {
+    grid-area: main;
+}
+
+.item4 {
+    grid-area: right;
+    margin-top: 15px;
+}
+
+
+.grid-co {
+    display: grid;
+    grid-template-areas: 'menu header header header right right' 'main main main main main main' 'main main main main main main' 'main main main main main main';
+    grid-gap: 10px;
+    padding: 10px;
+    height: 400px;
+}
+
+    .grid-co > div {
+        text-align: center;
+    }
+
+img + label {
+    background-image: url('pics/icons/definition.gif');
+}
+
+
+/*הגדרות חדשות*/
+#mySidenav2 {
+    background-image: url(../pics/Artboard1.png) !important;
+    background-repeat: no-repeat;
+    background-position-y: 69vh;
+    background-position-x: center;
+    background-color: #e39e9df2 !important;
+}
+
+.sidenav {
+    width: 340px;
+    left: -340px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-image: url('../pics/Artboard1.png');
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    text-align: right;
+    padding: 10px 22px;
+    font-size: 2.8vh;
+    z-index: 5;
+    background: linear-gradient(to top left, #ffb6a7de, white);
+}
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .sidenav a:hover {
+            color: salmon;
+        }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 46px;
+        margin-left: 50px;
+    }
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+#playerName {
+    width: 280px;
+    height: 34px;
+    outline: none;
+    padding: 9px;
+}
+
+select {
+    background-color: #bbb6b6d1;
+    width: 96px;
+    font-size: 2.33vh;
+    border-radius: 4px;
+}
+
+option:hover {
+    background-color: pink !important;
+}
+
+
+/*tooltip2*/
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+}
+
+    .tooltip2 .tooltiptext2 {
+        visibility: hidden;
+        width: 120px;
+        background-color: #fff;
+        color: black;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 110%;
+        margin-top: 17px;
+        font-size: 20px;
+        /*opacity: 0;
+        transition: opacity 0.3s;*/
+    }
+
+        .tooltip2 .tooltiptext2::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent white transparent transparent;
+        }
+
+    .tooltip2:hover .tooltiptext2 {
+        visibility: visible;
+       
+    }

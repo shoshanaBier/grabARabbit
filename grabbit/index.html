@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>grabbit!</title>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+    <link href="style/StyleSheet.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+    <div class="grid-co">
+        <div id="mySidenav" class="sidenav" dir="rtl">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <!--<aside >-->
+            <br />
+            <p>השם שלי:</p>
+            <input id="playerName" type="text" />
+
+            <p>בחר מכשפה:</p>
+            <img class="witchPic" id="wi1" src="pics/widches/wi1.png" />
+            <img class="witchPic" id="wi2" src="pics/widches/wi2.png" />
+            <img class="witchPic" id="wi3" src="pics/widches/wi3.png" />
+            <img class="witchPic selected" id="wi4" src="pics/widches/wi4.png" />
+
+            <p>בחר רקע:</p>
+            <img class="viewPic" id="vi1" src="pics/views/vi1.png" />
+            <img class="viewPic" id="vi2" src="pics/views/vi2.png" />
+            <img class="viewPic" id="vi3" src="pics/views/vi3.png" />
+            <img class="viewPic selected" id="vi4" src="pics/views/vi4.png" />
+           
+            <p>בחר זמן למשחק:</p>
+            <select id="chooseTime">
+                <option value="10">10 שניות</option>
+                <option value="30">30 שניות</option>
+                <option value="60">60 שניות</option>
+            </select>
+
+            <p>מוזיקה: <span>כבוי</span></p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round off"> </span>
+            </label>
+            <!--</aside>-->
+        </div>
+        <div class="def item2">
+            <div class="tooltip2">
+                <img src="pics/icons/icon1.png" onclick="openNav1()" />
+                <span class="tooltiptext2">הגדרות</span>
+            </div>
+
+            <div class="tooltip2">
+                <a href="../playGrabbit.html"><img src="pics/icons/icon2.png" /></a>
+                <span class="tooltiptext2">לדף הבית</span>
+            </div>
+            <div class="tooltip2">
+                <img class="startBtn" src="pics/icons/icon3.png" />
+                <span class="tooltiptext2">התחל משחק</span>
+            </div>
+            <div class="tooltip2">
+                <img src="pics/icons/icon4.png" onclick="openNav2()" />
+                <span class="tooltiptext2">הוראות</span>
+            </div>
+        </div>
+        <div id="mySidenav2" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+            <p>
+                <h2> הוראות </h2>
+                בכניסה למשחק היכנסו להגדרות על מנת להיכנס כשחקן רשום
+                <br />
+                שלב ראשון: עליכם לתפוס את הארנבים שקופצים ע"י לחיצה על הארנב, לחיצה על ארנב מזכה ב10 נקודות
+                <br />
+                לעיתים תופענה מכשפות על המסך עליכם להזהר מהן! מעבר עכבר על מכשפה מוריד 20 נקודות
+                <br />
+
+                שלב שני: בשלב השני יקפצו גם ארנבים עם גזר לחיצה על ארנב עם גזר מזכה ב30 נקודות
+                <br />
+
+                !בהצלחה
+            </p>
+            <!--<img src="pics/Artboard1.png" />-->
+        </div>
+
+        <h1 class="item1">GrAb-A-rAbBiT!</h1>
+        <div dir="rtl" class="item4">
+            <div class="points">
+                <p>נקודות:</p>
+                <div class="tooltip" dir="rtl">
+                    <span class="tooltiptext">Tooltip text</span>
+                </div>
+                <span class="score" dir="ltr">0</span>
+            </div>
+
+            <div class="points">
+                <p>שניות:</p>
+                <span id="time">10</span>
+            </div>
+
+            <div class="points">
+                <p>שלב:</p>
+                <span id="lev">1</span>
+            </div>
+        </div>
+
+        <div class="item3">
+            <div class="game grid-container1">
+                <div class="hole hole1">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole hole2">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole hole3">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole hole4">
+                    <div class="mole"></div>
+                </div>
+
+            </div>
+
+            <div class="game grid-container2">
+                <div class="hole hole5">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole hole6">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole hole7">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole hole8">
+                    <div class="mole"></div>
+                </div>
+                <div class="hole hole9">
+                    <div class="mole"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="id01" class="modal" dir="rtl">
+
+        <div class="modal-content animate">
+
+            <div id="popup1" class="overlay newClass">
+
+                <div class="popup">
+                    <p class="close" id="x1">×</p>
+
+                    <h2>כל הכבוד!!!! 🎉</h2>
+
+                    <div class="content-1">
+                    </div>
+                    <div class="content-2">
+                        <p id="points"></p>
+                        <p id="finalMove"></p>
+                        <p id="totalTime"></p>
+                        <p id="broke"></p>
+                        <button id="next-level">
+                            שלב הבא 😄
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio class="au1" controls="controls" hidden="hidden">
+        <source src="audio/Zoop.wav " />
+    </audio>
+
+    <audio class="au2" controls="controls" hidden="hidden">
+        <source src="audio/Scream-female.wav" />
+    </audio>
+
+    <audio class="music" controls="controls" hidden="hidden" loop>
+        <source src="audio/DripDrop.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio controls="controls" class="au3" hidden="hidden">
+        <source src="audio/rabbit4.wav" />
+    </audio>
+    <script src="script/JavaScript.js"></script>
+   
+</body>
+
+</html>
